@@ -49,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(height: 30),
 
               // Illustration
-              Image.asset("lib/assets/images/welcome.png", height: 220),
+              Image.asset("assets/images/welcome.png", height: 220),
               const SizedBox(height: 40),
 
               // Button
@@ -63,7 +63,9 @@ class WelcomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/phone');
+                  },
                   child: const Text(
                     "Get Started",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
