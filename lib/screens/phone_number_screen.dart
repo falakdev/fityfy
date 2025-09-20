@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'verify_number_screen.dart';
 
 class PhoneNumberScreen extends StatefulWidget {
   const PhoneNumberScreen({super.key});
 
   @override
-  _PhoneNumberScreenState createState() => _PhoneNumberScreenState();
+  @override
+  State<PhoneNumberScreen> createState() => _PhoneNumberScreenState();
 }
 
 class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
@@ -20,7 +22,13 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
         context,
       ).showSnackBar(SnackBar(content: Text("Verifying $fullNumber")));
 
-      // TODO: Add navigation to OTP screen or API call
+      // Navigate to the verify number (OTP) screen, passing the full number
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => VerifyNumberScreen(phoneNumber: fullNumber),
+        ),
+      );
     }
   }
 
