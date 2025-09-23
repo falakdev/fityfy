@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'set_password_screen.dart';
 
 class VerifyNumberScreen extends StatefulWidget {
   final String phoneNumber; // Pass phone number dynamically
@@ -163,7 +164,15 @@ class _VerifyNumberScreenState extends State<VerifyNumberScreen> {
                                   elevation: 4,
                                 ),
                                 onPressed: otp.every((d) => d.isNotEmpty)
-                                    ? () {}
+                                    ? () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SetPasswordScreen(),
+                                          ),
+                                        );
+                                      }
                                     : null,
                                 child: const Text(
                                   "Continue",
