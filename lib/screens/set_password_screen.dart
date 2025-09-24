@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'profile_pic_page.dart';
 
 class SetPasswordScreen extends StatefulWidget {
-  const SetPasswordScreen({Key? key}) : super(key: key);
+  const SetPasswordScreen({super.key});
 
   @override
   State<SetPasswordScreen> createState() => _SetPasswordScreenState();
@@ -163,7 +164,13 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> {
                                 _hasUppercase &&
                                 _hasNumber)
                             ? () {
-                                // Continue action
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ProfilePicturePage(),
+                                  ),
+                                );
                               }
                             : null,
                         child: const Text(

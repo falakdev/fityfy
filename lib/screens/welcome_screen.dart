@@ -49,7 +49,11 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(height: 30),
 
               // Illustration
-              Image.asset("assets/images/welcome.png", height: 220),
+              Image.network(
+                "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=600&q=80",
+                height: 220,
+                fit: BoxFit.cover,
+              ),
               const SizedBox(height: 40),
 
               // Button
