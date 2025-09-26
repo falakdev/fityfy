@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'guidance_chat_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -65,6 +66,25 @@ class DashboardScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                ),
+                // Guidance button (floating action style)
+                Positioned(
+                  right: 24,
+                  bottom: 24,
+                  child: FloatingActionButton.extended(
+                    heroTag: 'guidance',
+                    backgroundColor: Colors.green,
+                    icon: const Icon(Icons.psychology),
+                    label: const Text('Guidance'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const GuidanceChatScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
